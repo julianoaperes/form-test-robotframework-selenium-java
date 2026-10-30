@@ -8,3 +8,5 @@ target/
 
 # Robot Framework results
 results/
+
+/.vscode/settings.json

@@ -1,12 +1,11 @@
 *** Settings ***
 Documentation    Tests the Selenium practice form using Java remote keywords.
 
-Library          Remote    http://127.0.0.1:8270/browser
 Library          Collections
 Library          OperatingSystem
+Library    ${CURDIR}/../resources/JavaRemote.py    http://127.0.0.1:8270/browser
 
 Test Teardown    Close Browser
-
 
 *** Variables ***
 ${URL}            https://www.selenium.dev/selenium/web/web-form.html

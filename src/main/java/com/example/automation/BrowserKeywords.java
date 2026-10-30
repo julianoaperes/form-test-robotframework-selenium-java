@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.Select;
 
 public class BrowserKeywords {
 
@@ -53,5 +54,19 @@ public class BrowserKeywords {
                 wait = null;
             }
         }
+    }
+        public void selectDropdownOption(String optionText) {
+        Select dropdown = new Select(
+            driver.findElement(By.name("my-select"))
+        );
+
+        dropdown.selectByVisibleText(optionText);
+    }
+        public String getSelectedDropdownOption() {
+        Select dropdown = new Select(
+            driver.findElement(By.name("my-select"))
+        );
+
+        return dropdown.getFirstSelectedOption().getText();
     }
 }

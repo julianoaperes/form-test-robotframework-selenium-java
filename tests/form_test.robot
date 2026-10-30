@@ -1,10 +1,13 @@
 *** Settings ***
-Library         Remote    http://127.0.0.1:8270/browser
-Test Teardown   closeBrowser
+Library          Remote    http://127.0.0.1:8270/browser
+
+Test Teardown    closeBrowser
+
 
 *** Variables ***
-${URL}          https://www.selenium.dev/selenium/web/web-form.html
-${INPUT_TEXT}   Hello from Robot Framework and Java!
+${URL}           https://www.selenium.dev/selenium/web/web-form.html
+${INPUT_TEXT}    Hello from Robot Framework and Java!
+
 
 *** Test Cases ***
 Submit Form Successfully
@@ -13,3 +16,9 @@ Submit Form Successfully
     submitForm
     ${message}=    getConfirmationMessage
     Should Be Equal    ${message}    Received!
+
+Select dropdown option successfully
+    openBrowser    ${URL}
+    selectDropdownOption    Two
+    ${selected_option}=    getSelectedDropdownOption
+    Should Be Equal    ${selected_option}    Two

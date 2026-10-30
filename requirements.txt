@@ -1,0 +1,2 @@
+robotframework==7.5
+robotframework-robocop==9.1.2

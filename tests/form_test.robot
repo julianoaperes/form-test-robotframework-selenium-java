@@ -2,9 +2,13 @@
 Library          Remote    http://127.0.0.1:8270/browser
 
 Test Teardown    closeBrowser
+
+
 *** Variables ***
 ${URL}           https://www.selenium.dev/selenium/web/web-form.html
 ${INPUT_TEXT}    Hello from Robot Framework and Java!
+
+
 *** Test Cases ***
 Submit Form Successfully
     Given the web form is open
